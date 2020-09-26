@@ -12,14 +12,14 @@ class Torch {
     virtual int trc_isArmed();
     void virtual trc_arm();
     void virtual trc_disarm();
-    
-    double virtual trc_getCurrentPowerDraw();
-    double virtual trc_getLowArmedPowerDraw();
-    double virtual trc_getLowDisarmedPowerDraw();
-    double virtual trc_getHighArmedPowerDraw();
-    double virtual trc_getHighDisarmedPowerDraw();
-    double virtual trc_getAverageArmedPowerDraw();
-    double virtual trc_getAverageDisarmedPowerDraw();
+
+    double virtual trc_getCurrentCurrentDraw();
+    double virtual trc_getLowArmedCurrentDraw();
+    double virtual trc_getLowDisarmedCurrentDraw();
+    double virtual trc_getHighArmedCurrentDraw();
+    double virtual trc_getHighDisarmedCurrentDraw();
+    double virtual trc_getAverageArmedCurrentDraw();
+    double virtual trc_getAverageDisarmedCurrentDraw();
 };
 
 class Rail {
@@ -44,13 +44,13 @@ class DualRailTorch: public Torch {
     int trc_isArmed();
     void trc_arm();
     void trc_disarm();
-    double trc_getCurrentPowerDraw();
-    double trc_getLowArmedPowerDraw();
-    double trc_getLowDisarmedPowerDraw();
-    double trc_getHighArmedPowerDraw();
-    double trc_getHighDisarmedPowerDraw();
-    double trc_getAverageArmedPowerDraw();
-    double trc_getAverageDisarmedPowerDraw();
+    double trc_getCurrentCurrentDraw();
+    double trc_getLowArmedCurrentDraw();
+    double trc_getLowDisarmedCurrentDraw();
+    double trc_getHighArmedCurrentDraw();
+    double trc_getHighDisarmedCurrentDraw();
+    double trc_getAverageArmedCurrentDraw();
+    double trc_getAverageDisarmedCurrentDraw();
 };
 
 #endif

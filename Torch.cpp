@@ -34,35 +34,35 @@ void DualRailTorch::trc_disarm() {
   this->trc_setArmDisarm(LOW);
 };
 
-double DualRailTorch::trc_getCurrentPowerDraw() {
-  return this->trc_isArmed() ? this->trc_getAverageArmedPowerDraw(): this->trc_getAverageDisarmedPowerDraw();
+double DualRailTorch::trc_getCurrentCurrentDraw() {
+  return this->trc_isArmed() ? this->trc_getAverageArmedCurrentDraw(): this->trc_getAverageDisarmedCurrentDraw();
 };
 
 
-double DualRailTorch::trc_getLowArmedPowerDraw() {
+double DualRailTorch::trc_getLowArmedCurrentDraw() {
   double rail1Current = this->rail1.railSize * ((5 - this->rail1.lowWattage) / this->rail1.resistor);
   double rail2Current = this->rail2.railSize * ((5 - this->rail2.lowWattage) / this->rail2.resistor);
   return rail1Current + rail2Current;
 };
 
-double DualRailTorch::trc_getLowDisarmedPowerDraw() {
+double DualRailTorch::trc_getLowDisarmedCurrentDraw() {
   return 0;
 };
 
-double DualRailTorch::trc_getHighArmedPowerDraw() {
+double DualRailTorch::trc_getHighArmedCurrentDraw() {
   double rail1Current = this->rail1.railSize * ((5 - this->rail1.highWattage) / this->rail1.resistor);
   double rail2Current = this->rail2.railSize * ((5 - this->rail2.highWattage) / this->rail2.resistor);
   return rail1Current + rail2Current;
 };
 
-double DualRailTorch::trc_getHighDisarmedPowerDraw() {
+double DualRailTorch::trc_getHighDisarmedCurrentDraw() {
   return 0;
 };
 
-double DualRailTorch::trc_getAverageArmedPowerDraw() {
-  return (this->trc_getLowArmedPowerDraw() + this->trc_getHighArmedPowerDraw()) / 2;
+double DualRailTorch::trc_getAverageArmedCurrentDraw() {
+  return (this->trc_getLowArmedCurrentDraw() + this->trc_getHighArmedCurrentDraw()) / 2;
 };
 
-double DualRailTorch::trc_getAverageDisarmedPowerDraw() {
-  return (this->trc_getLowDisarmedPowerDraw() + this->trc_getHighDisarmedPowerDraw()) / 2;
+double DualRailTorch::trc_getAverageDisarmedCurrentDraw() {
+  return (this->trc_getLowDisarmedCurrentDraw() + this->trc_getHighDisarmedCurrentDraw()) / 2;
 };
